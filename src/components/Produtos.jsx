@@ -1,11 +1,12 @@
 import tenis4 from "../assets/tenis4.png";
+import setinha from "../assets/setinha.png";
 
 const Produtos = () => {
   return (
     <section id="produtos">
       <div className="titulo">
         <h3>Produtos em alta</h3>
-        <a href="">Ver todos</a>
+        <a href="">Ver todos <img src={setinha} alt=""/></a>
       </div>
       <div className="cards">
         <div className="card">

@@ -7,7 +7,7 @@ const Oferta = () => {
         <div className="produto-detalhe"></div>
         <img src={produtooferta} alt="" className="produto-oferta" />
       </div>
-      <div>
+      <div className="flex-1">
         <h6>Oferta especial</h6>
         <h2>
           Air Jordan edição de <br /> colecionador
