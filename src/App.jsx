@@ -5,10 +5,9 @@ import Header from "./components/header";
 import Oferta from "./components/Oferta";
 import Produtos from "./components/Produtos";
 
-
 const App = () => {
-  return ( 
-    <main>    
+  return (    
+    <main>
       <Header />
       <Banner />
       <Destaques />
@@ -16,9 +15,8 @@ const App = () => {
       <Oferta />
       <Footer />
     </main>
-   );
-}
- 
+    
+  );
+};
+
 export default App;
-
-

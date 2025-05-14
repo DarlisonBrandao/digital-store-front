@@ -4,8 +4,7 @@ import pontinhos from "../assets/pontinhos.png";
 const Banner = () => {
   return (
     <section id="banner">
-      <div>
-        <div className="conteudo" />
+      <div className="conteudo">
         <h6>Melhores ofertas personalizadas</h6>
         <h2>
           Queima de

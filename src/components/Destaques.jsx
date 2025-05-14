@@ -1,6 +1,7 @@
 import foneouvido from "../assets/foneouvido.png";
 import tenis2 from "../assets/tenis2.png";
 import camisa from "../assets/camisa.svg";
+import camisa2 from "../assets/camisa.png";
 import calca from "../assets/calca.svg";
 import bone from "../assets/bone.svg";
 import fone from "../assets/fone.svg";
@@ -21,7 +22,7 @@ const Destaques = () => {
               Comprar
             </a>
           </div>
-          <img src={camisa} alt="" />
+          <img src={camisa2} alt="" />
         </div>
 
         <div>
