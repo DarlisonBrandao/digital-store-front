@@ -8,14 +8,14 @@ import Produtos from "./components/Produtos";
 
 const App = () => {
   return ( 
-    <>
+    <main>    
       <Header />
       <Banner />
+      <Destaques />
       <Produtos />
       <Oferta />
-      <Destaques />
       <Footer />
-    </>
+    </main>
    );
 }
  
