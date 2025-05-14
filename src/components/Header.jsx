@@ -1,5 +1,5 @@
 import logo from "../assets/logo.png";
-import lupa from "../assets/icon-lupa.png";  
+import lupa from "../assets/icon-lupa.png";
 import carrinho from "../assets/icon-carrinho.png";
 
 const Header = () => {
