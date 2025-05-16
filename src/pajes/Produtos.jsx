@@ -17,35 +17,125 @@ const Produtos = () => {
       <div className="flex gap-[28px] items-start">
         {/* filtros */}
         <div className="w-[300px] bg-white rounded p-[30px]">
-            <h5 className="font-bold text-grafite">Filtrar por</h5>
-            <div className="h-[1px] bg-cinza-claro my-[20px]"></div>
-            <h6 className="mb=[10px] font-bold text-grafite">Marca</h6>
-            <div className="grid gap-[10px]">
-              <label className="flex gap-[10px] items-center">
-                <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                Adidas
-              </label>
-              <label className="flex gap-[10px] items-center">
-                <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                Balanciaga
-              </label>
-              <label className="flex gap-[10px] items-center">
-                <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                Nike
-              </label>
-              <label className="flex gap-[10px] items-center">
-                <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                Puma
-              </label>
-              <label className="flex gap-[10px] items-center">
-                <input className="w-[22px] h-[22px] accent-rosa" type="checkbox" />
-                Reebok
-              </label>
-            </div>
+          <h5 className="font-bold text-grafite">Filtrar por</h5>
+          <div className="h-[1px] bg-cinza-claro my-[20px]"></div>
+          <h6 className="mb=[10px] font-bold text-grafite">Marca</h6>
+          <div className="grid gap-[10px]">
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Adidas
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Balanciaga
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Nike
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Puma
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Reebok
+            </label>
+          </div>
 
+          <div className="h-[20px]"></div>
+          <h6 className="mb=[10px] font-bold text-grafite">Categoria</h6>
+          <div className="grid gap-[10px]">
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Esporte e Lazer
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Casual
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Utilitario
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Corrida
+            </label>
+          </div>
+
+          <div className="h-[20px]"></div>
+          <h6 className="mb=[10px] font-bold text-grafite">Gênero</h6>
+          <div className="grid gap-[10px]">
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Masculino
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Feminino
+            </label>
+            <label className="flex gap-[10px] items-center">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Unisex
+            </label>
+          </div>
+
+          <div className="h-[20px]"></div>
+          <h6 className="mb=[10px] font-bold text-grafite">Estado</h6>
+          <div className="grid gap-[10px]">
+            <label className="flex gap-[10px] items-center ">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />                          
+              Novo
+            </label>
+            <label className="flex gap-[10px] items-center ">
+              <input
+                className="w-[22px] h-[22px] accent-rosa"
+                type="checkbox"
+              />
+              Usado
+            </label>
+          </div>
         </div>
-
-
       </div>
     </div>
   );
