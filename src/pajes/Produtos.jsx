@@ -113,7 +113,7 @@ const Produtos = () => {
                 className="w-[22px] h-[22px] accent-rosa"
                 type="checkbox"
               />
-              Unisex
+              Unissex
             </label>
           </div>
 
@@ -123,14 +123,14 @@ const Produtos = () => {
             <label className="flex gap-[10px] items-center ">
               <input
                 className="w-[22px] h-[22px] accent-rosa"
-                type="checkbox"
+                type="radio"
               />                          
               Novo
             </label>
             <label className="flex gap-[10px] items-center ">
-              <input
+              <input 
                 className="w-[22px] h-[22px] accent-rosa"
-                type="checkbox"
+                type="radio"
               />
               Usado
             </label>
