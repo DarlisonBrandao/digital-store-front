@@ -1,4 +1,22 @@
+import Produto from "../components/Produto";
+
+
+
 const Produtos = () => {
+    const [filtroMarca, setFiltroMarca] = useState([]);
+    const [filtroCategoria, setFiltroCategoria] = useState([]);
+    const [filtroGenero, setFiltroGenero] = useState([]);
+    const [filtroEstado, setFiltroEstado] = useState("Novo");
+
+    function verificarMarca(){
+      if(filtroMarca.includes(marca)){
+        setFiltroMarca([...filtroMarca,filter(cadaMarca => cadaMarca != marca)]);
+      }else{
+        setFiltroMarca([...filtroMarca,marca]);
+      }
+      
+    }
+
   return (
     <div className="xl:px-[100px] xl:pt-[40px] xl:pb-[140px]">
       {/* ordenação */}
@@ -25,6 +43,7 @@ const Produtos = () => {
               <input
                 className="w-[22px] h-[22px] accent-rosa"
                 type="checkbox"
+                onChange={() => verificarMarca("Adidas")}
               />
               Adidas
             </label>
@@ -32,6 +51,7 @@ const Produtos = () => {
               <input
                 className="w-[22px] h-[22px] accent-rosa"
                 type="checkbox"
+                onChange={() => verificarMarca("Blanciaga")}
               />
               Balanciaga
             </label>
@@ -39,6 +59,7 @@ const Produtos = () => {
               <input
                 className="w-[22px] h-[22px] accent-rosa"
                 type="checkbox"
+                onChange={() => verificarMarca("Nike")}
               />
               Nike
             </label>
@@ -46,6 +67,7 @@ const Produtos = () => {
               <input
                 className="w-[22px] h-[22px] accent-rosa"
                 type="checkbox"
+                onChange={() => verificarMarca("Puma")}
               />
               Puma
             </label>
@@ -53,13 +75,14 @@ const Produtos = () => {
               <input
                 className="w-[22px] h-[22px] accent-rosa"
                 type="checkbox"
+                onChange={() => verificarMarca("Reebok")}
               />
               Reebok
             </label>
           </div>
 
           <div className="h-[20px]"></div>
-          <h6 className="mb=[10px] font-bold text-grafite">Categoria</h6>
+          <h6 className="mb=[10px] font-bold text-grafite mt-4">Categoria</h6>
           <div className="grid gap-[10px]">
             <label className="flex gap-[10px] items-center">
               <input
@@ -121,23 +144,24 @@ const Produtos = () => {
           <h6 className="mb=[10px] font-bold text-grafite">Estado</h6>
           <div className="grid gap-[10px]">
             <label className="flex gap-[10px] items-center ">
-              <input
-                className="w-[22px] h-[22px] accent-rosa"
-                type="radio"
-              />                          
+              <input className="w-[22px] h-[22px] accent-rosa" type="radio" />
               Novo
             </label>
             <label className="flex gap-[10px] items-center ">
-              <input 
-                className="w-[22px] h-[22px] accent-rosa"
-                type="radio"
-              />
+              <input className="w-[22px] h-[22px] accent-rosa" type="radio" />
               Usado
             </label>
+            </div>
+
+             {/* produtos */}
+          <div className=" grid grid-cols-3 gap-[14px]">
+            <Produto />
+            
           </div>
-        </div>
-      </div>
     </div>
+    </div>
+  </div>
+      
   );
 };
 
