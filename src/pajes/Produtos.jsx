@@ -8,6 +8,7 @@ const Produtos = () => {
   // const [filtroEstado, setFiltroEstado] = useState("Novo");
 
   console.log(filtroMarca,filtroCategoria,filtroGenero);
+ 
   
 
   function verificarMarca(marca) {
