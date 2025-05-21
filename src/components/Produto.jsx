@@ -1,13 +1,13 @@
 import tenis4 from "../assets/tenis4.png";
 
-const Produto = () => {
+const Produto = ({nome,categoria,genero,marca,preco,desconto}) => {
   return (
     <div title="K-Swiss v8 - Masculino">
       <div className="h-[320px] bg-white rounded shadow-xl relative flex justify-center items-center">
         {desconto > 0 && (
           <span className="absolute top-5 left-5 leading-[32px] bg-verde text-[14px] uppercase font-bold px-4 rounded-3xl ">
-            {" "}
-            {desconto}% off{" "}
+            
+            {desconto}% off
           </span>
         )}
         <img src={tenis4} alt="" className="w-full" />
@@ -20,7 +20,7 @@ const Produto = () => {
         <h4 className="text-[24px] font-bold">
           {desconto > 0 ? (
             <>
-              <del className="text-cinza font-light mr-3">R${preco}</del> R${" "}
+              <del className="text-cinza font-light mr-3">R${preco}</del> R$
               {preco - (preco * desconto) / 100}
             </>
           ) : (

@@ -3,6 +3,8 @@ import Home from "../pajes/Home";
 import Produtos from "../pajes/Produtos";
 import NotFound from "../pajes/Notfound";
 import PageLayout from "../layouts/PageLayout";
+import AuthLayout from "../layouts/AuthLayout";
+import Login from "../pajes/Login";
 
 const Paths = () => {
   return (
@@ -12,6 +14,10 @@ const Paths = () => {
           <Route index element={<Home />} />
           <Route path="/produtos" element={<Produtos />} />
         </Route>
+        <Route path="/auth" element={<AuthLayout />}>
+          <Route index element={<Login />} />
+        </Route>  
+
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
