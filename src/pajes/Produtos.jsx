@@ -1,14 +1,41 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Produto from "../components/Produto";
+import { AXIOS } from "../services";
+
 
 const Produtos = () => {
   const [filtroMarca, setFiltroMarca] = useState([]);
   const [filtroCategoria, setFiltroCategoria] = useState([]);
   const [filtroGenero, setFiltroGenero] = useState([]);
-  // const [filtroEstado, setFiltroEstado] = useState("Novo");
+  const [filtroEstado, setFiltroEstado] = useState("Novo");
+  const [produtos, setProdutos] = useState([]);
+  const [produtosFiltrados, setProdutosFiltrados] = useState([]);
 
-  console.log(filtroMarca,filtroCategoria,filtroGenero);
- 
+  //Requisição Sincrona (modelo de fazer Sincrona)
+  // fetch("http://localhost:3000/produtos")
+  //   .then(res => res.json())
+  //   .then(res => {
+    //     console.log("produtos:", res);
+    
+    //   })
+    
+    // Requisição Assincrona (modelo de fazer Assincrona)
+    // const request = await fetch("http://localhost:3000/produtos");
+    // const response = await request.json();
+    // console.log(response);
+    
+    //Requisição Assincrona (modelo de fazer Assincrona com AXIOS)
+    
+    async function buscarProdutos() {
+    try{
+      const response = await AXIOS.get("/produtos");
+      setProdutos(response.data);
+      setProdutosFiltrados(response.data);
+
+    } catch (error) {
+      alert("error.message");
+    }
+  }
   
 
   function verificarMarca(marca) {
@@ -39,17 +66,20 @@ const Produtos = () => {
       return;
     }
     setFiltroGenero([...filtroGenero, genero]);
-  }
+  } 
 
-  // function verificarEstado(estado) {
-  //   if (filtroEstado.includes(estado)) {
-  //     setFiltroEstado([
-  //       ...filtroEstado.filter((cadaEstado) => cadaEstado != estado),
-  //     ]);
-  //     return;
-  //   }
-  //   setFiltroEstado([...filtroEstado, estado]);
-  // }
+  useEffect(() => {
+    buscarProdutos();
+  }, []);
+
+  useEffect(() => {
+      if(filtroMarca.length > 0){
+          setProdutosFiltrados([...produtos.filter(produto => filtroMarca.includes(produto.marca))])
+          return;
+      }
+      setProdutosFiltrados([...produtos]);
+  }, [filtroMarca]);
+  
 
   return (
     <div className="xl:px-[100px] xl:pt-[40px] xl:pb-[140px]">
@@ -174,11 +204,15 @@ const Produtos = () => {
           <h6 className="mb-[10px] font-bold text-grafite mt-4">Estado</h6>
           <div className="grid gap-[10px]">
             <label className="flex gap-[10px] items-center">
-              <input className="w-[22px] h-[22px] accent-rosa" type="radio" />
+              <input className="w-[22px] h-[22px] accent-rosa" type="radio" 
+              onChange={() => setFiltroEstado("Novo")}
+              checked={filtroEstado == "Novo"} />
               Novo
             </label>
             <label className="flex gap-[10px] items-center">
-              <input className="w-[22px] h-[22px] accent-rosa" type="radio" />
+              <input className="w-[22px] h-[22px] accent-rosa" type="radio"
+              onChange={() => setFiltroEstado("Usado")}
+              checked={filtroEstado == "Usado"} /> 
               Usado
             </label>
           </div>
@@ -186,12 +220,13 @@ const Produtos = () => {
 
         {/* produtos */}
         <div className="grid grid-cols-3 gap-[14px]">
-          <Produto />
-          <Produto />
-          <Produto />
-          <Produto />
-          <Produto />
-          <Produto />
+          {
+              produtosFiltrados.length > 0 && produtosFiltrados.map(produto => (
+                <Produto
+                  {...produto}
+            />
+          ))}
+          
         </div>
       </div>
     </div>
