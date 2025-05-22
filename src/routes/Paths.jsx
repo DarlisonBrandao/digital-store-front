@@ -16,7 +16,7 @@ const Paths = () => {
         </Route>
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Login />} />
-        </Route>  
+        </Route>
 
         <Route path="*" element={<NotFound />} />
       </Routes>

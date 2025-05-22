@@ -1,6 +1,7 @@
 import logo from "../assets/logo.png";
 import lupa from "../assets/icon-lupa.png";
 import carrinho from "../assets/icon-carrinho.png";
+import { NavLink } from "react-router";
 
 const Header = () => {
   return (
@@ -18,7 +19,7 @@ const Header = () => {
 
         <div className="acoes">
           <a href="">Cadastre-se</a>
-          <a href="" className="btn">
+          <a href="/auth" className="btn">
             Entrar
           </a>
         </div>
@@ -30,12 +31,11 @@ const Header = () => {
       </div>
 
       <nav>
-        <a href="/" className="active">
-          Home
-        </a>
-        <a href="/produtos">Produtos</a>
-        <a href="/categorias">Categorias</a>
-        <a href="/meus-pedidos">Meus Pedidos</a>
+        <NavLink to= "/">Home</NavLink>
+        <NavLink to= "/produtos">Produtos</NavLink>
+        <NavLink to= "/categorias">Categorias</NavLink>
+        <NavLink to= "/meus-pedidos">Meus Pedidos</NavLink>
+
       </nav>
     </header>
   );
