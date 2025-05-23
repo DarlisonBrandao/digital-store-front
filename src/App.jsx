@@ -1,6 +1,5 @@
 
 import LoginProvider from "./contexts/LoginContext";
-import CadastrarUsuario from "./pajes/CadastroUsuario";
 import Paths from "./routes/paths";
 
 const App = () => {
@@ -9,10 +8,6 @@ const App = () => {
       <LoginProvider>
         <Paths />
       </LoginProvider>
-      
-      <CadastrarUsuario>
-        <Paths />
-      </CadastrarUsuario>
 
 
     </>
