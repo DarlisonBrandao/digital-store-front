@@ -5,6 +5,7 @@ import NotFound from "../pajes/Notfound";
 import PageLayout from "../layouts/PageLayout";
 import AuthLayout from "../layouts/AuthLayout";
 import Login from "../pajes/Login";
+import CadastrarUsuario from "../pajes/CadastroUsuario";
 
 const Paths = () => {
   return (
@@ -17,6 +18,10 @@ const Paths = () => {
         <Route path="/auth" element={<AuthLayout />}>
           <Route index element={<Login />} />
         </Route>
+        <Route path="/cadastrarusuario" element={<CadastrarUsuario />}>
+          <Route index element={<Cadastrar />} />
+        </Route>
+        
 
         <Route path="*" element={<NotFound />} />
       </Routes>

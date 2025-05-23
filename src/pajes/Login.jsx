@@ -1,8 +1,22 @@
+import { useContext } from "react";
+import { LoginContext } from "../contexts/LoginContext";
+import { useNavigate } from "react-router";
+
+
 const Login = () => {
+      const { setLogado } = useContext(LoginContext);
+      const navigate = useNavigate()
+
+      function onLogin(event){
+        event.preventDefault();
+        setLogado(true);
+        navigate("/")
+  }
+
   return (
     <div>
       <div className="bg-white p-[30px] rouded xl:w-[580px]">
-        <form>
+        <form onSubmit={onLogin}>
           <h4 className="text-center font-bold text-[22px] leading-[34px] xl:text-left xl:mb-5">
             Acesse sua conta
           </h4>
@@ -28,6 +42,9 @@ const Login = () => {
 
           </button>
         </form>
+      </div>
+      <div className="hidden">
+        
       </div>
     </div>
   );

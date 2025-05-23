@@ -12,11 +12,11 @@ const Home = () => {
       <Produtos />
       <Oferta />
       
-     
+  
     </main>
     
 
-   );
+  );
 }
- 
+
 export default Home;
